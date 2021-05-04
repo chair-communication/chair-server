@@ -1,4 +1,4 @@
-# Chair-server
+# chair-server
 의자소통 API 서버입니다. 
 
 ## 포스터
