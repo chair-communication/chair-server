@@ -87,3 +87,22 @@ src
     	"error"? : { "message": string } // 없는 경로로 들어올 때 에러만 찍힘
     }
     ```
+    
+ 
+|기능       |메서드   |URI                             |요청 헤더                      |요청 바디                               |응답 헤더, 바디                                              |
+|:---------|:------:|:--------------------------------|:---------------------------|:------------------------------------|:-------------------------------------------------------|
+|로그인      |post  |api/users/login                 |                           |email<str>, password<str>           |header:token<str>, message<str>, success<bool>         |
+|첫 로그인 체크 |put   |api/users/login/check           |token<str>                 |check<int>                          |message<str>, success<bool>                            |
+|회원가입     |post  |api/users/signup                |                           |email<str>, name<str>, password<str>|message<str>, success<bool>                            |
+|계정 정보 보기 |get   |api/users/account               |token<str>                 |                                    |message<str>, success<bool>, user<obj>                 |
+|이메일 수정   |put   |api/users/account/emailmodify   |token<str>                 |newEmail<str>                       |message<str>, success<bool>                            |
+|비밀번호 수정  |put   |api/users/account/passwordmodify|token<str>                 |newPassword<str>, password<str>     |message<str>, success<bool>                            |
+|비밀번호 찾기  |post  |api/users/find/password         |                           |email<str>, name<str>               |message<str>, success<bool>                            |
+|회원탈퇴     |delete|api/users/withdrawal            |token<str>                 |password<str>                       |message<str>, success<bool>                            |
+|자세 데이터 저장|post  |api/postures/save               |token<str>                 |postures<arr>                       |message<str>, success<bool>                            |
+|일간 통계    |get   |api/statistic/date              |query:date<str>, token<str>|                                    |message<str>, statistics<arr>, success<bool>, time<str>|
+|월간 통계    |get   |api/statistic/month             |query:date<str>, token<str>|                                    |message<str>, statistics<arr>, success<bool>, time<str>|
+|총 통계     |get   |api/statistic/all               |token<str>                 |                                    |message<str>, statistics<arr>, success<bool>, time<str>|
+|총 통계 비교  |get   |api/statistic/all/comparison    |token<str>                 |                                    |message<str>, statistics<arr>, success<bool>           |
+|자세 추측    |post  |api/postures/inference          |token<str>                 |posture<arr>                        |inference<str>, message<str>, success<bool>            |
+
