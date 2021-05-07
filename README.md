@@ -18,9 +18,18 @@
 - **시엘척추병원**
 - **cm병원 관절전문병원**
 
-#### 기능
+#### 주요 기능
 - 실시간 앉은 자세 모니터링
 - 사용자의 자세 데이터에 대한 통계 정보 시각화
+- 자세 정보 제공 (병원 참고)
+
+## 사용 기술
+- `TypeScript`
+- `Node.js`, `ExpressJS`
+- `Sequelize`, `Nodemailer`
+- `MariaDB`
+- `AWS ec2`, `GCP`
+- `Notion`, `JANDI`
 
 ## 프로젝트 구조
 ```
@@ -78,7 +87,7 @@ src
     /*
     * @this response.body
     * @description success가 false일 때 메세지 확인
-    * @attributes { success!, message!, user?, statistics, error? }
+    * @attributes { success, message, user, statistics, error }
     */
     {
     	"success": boolean,
